@@ -28,7 +28,7 @@ if (path.basename(process.argv[1]) === 'app.js') {
 
     if (process.env.CODESPACE_NAME) {
 
-        console.log(`Application is running at https://${process.env.CODESPACE_NAME}+3000`)
+        console.log(`Application is running at https://${process.env.CODESPACE_NAME}-${process.env.APPLICATION_PORT}.app.github.dev`)
     }
 
     process.chdir(path.dirname(import.meta.filename))
