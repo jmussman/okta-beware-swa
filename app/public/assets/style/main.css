@@ -1,0 +1,182 @@
+/* main.css
+** Copyright © 2024 Joel A Mussman and NextStep IT Training powered by Smallrock. All rights reserved.
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1c2242;
+    background-image: url(../images/pyrate-sunset.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.header {
+    height: 150px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    background-image: url(../images/public-room.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    border-bottom: 3px solid darkslategray;
+}
+
+div.header > div.banner {
+    padding-top: 40px;
+    color: lightgrey;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 48pt;
+    font-weight: bold;
+    text-shadow: 4px 4px black;
+}
+
+div.header > img.pyrates {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    height: 180px;
+    z-index: 100;
+}
+
+div.main {
+    margin: 0;
+    padding: 0;
+    min-height: calc(100vh - 200px);
+    vertical-align: bottom;
+}
+
+div.navigation {
+    float: left;
+    width: 210px;
+    height: calc(100% - 140px);
+    margin: 120px 0 0 0;
+    padding: 10px 30px 10px 10px;
+    text-align: right;
+}
+
+a.navigation {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    color: light-grey;
+    text-decoration: none;
+}
+
+img.avatar {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+div.content {
+    float: left;
+    width: calc(100% - 273px);
+    min-height: calc(100vh - 220px);
+    margin: 0 0 10px 0;
+    padding: 10px;
+    overflow-x: scroll;
+    background-color: rgb(255,255,255,0.75);
+    overflow-x: scroll;
+    border-left: 3px solid darkslategray;
+}
+
+p.welcome {
+    font-size: 16pt;
+}
+
+div.footer {
+    margin: 10px 0 10px 0;
+    padding: 0;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+div.footer > span.footer {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10pt;
+    font-weight: normal;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+a:-webkit-any-link {            /* This is the final override */
+    text-decoration: none;
+    color: black;
+}
+
+div.authn {
+    min-height: calc(100vh - 200px);
+    width: 100%;
+}
+
+div.signon {
+    margin-top: 150px;
+    margin-left: calc((100vw - 300px) * .75);
+    width: 300px;
+    border: 2px solid darkgray;
+    border-radius: 7px;
+    background-color: rgb(255,255,255,0.75);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div.signon > div.banner {
+    margin: none;
+    background-color: navy;
+    height: 65px;
+    color: white;
+    text-align: center;
+    font-size: 20pt;
+    font-weight: lighter;
+    padding-top: 25px;
+    border-radius: 5px 5px 0 0;
+}
+
+div.signon > div.logo {
+    margin: 20px auto;
+    text-align: center;
+}
+
+div.signon > div.error {
+    padding: 10px;
+    border: 1px solid lightcoral;
+    background-color: darkred;
+    color: white;
+    text-align: center;
+    font-size: 10pt;
+}
+
+div.signon > div.form {
+    margin: 20px 50px;
+    width: 300px;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div.signon > div.form label {
+    font-size: 10pt;
+    color: darkslategray;
+}
+
+div.signon > div.form input {
+    width: 192px;
+    margin: 10px 0 10px 0;
+    font-size: 12pt;
+    height: 1.5em;
+}
+
+div.signon > div.form input[type=submit] {
+    margin-top: 20px;
+    width: 200px;
+    height: 2.5em;
+    background-color: navy;
+    border-radius: 5px;
+    color: white;
+    font-size: 10pt;
+}
+
+img.map {
+    height: calc(100vh - 240px);
+    opacity: 100;
+}

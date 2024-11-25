@@ -1,0 +1,11 @@
+<!-- navigation.ejs
+    Copyright © 2024 Joel A Mussman. All rights reserved.
+-->
+
+<div class="navigation">
+    <% if (typeof isAuthenticated !== 'undefined' && isAuthenticated) { %>
+        <img class="avatar" src="<%= avatar ?? '/images/gravatar.jpg' %>" /><br><br>
+    <% } %>
+    <a href="/index" class="navigation">Pyrates</a><br>
+    <a href="/logout" class="navigation">Sign Out</a><br>
+</div>

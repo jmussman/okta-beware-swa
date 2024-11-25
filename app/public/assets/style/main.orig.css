@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/pyrate-sunset.jpg);
+}
+
+div.header {
+    height: 150px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    background-image: url(../images/public-room.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+span.banner {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 48pt;
+    font-weight: bold;
+    color: lightgrey;
+}
+
+span.sub-banner {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 36pt;
+    font-weight: bold;
+    color: lightgrey;
+}
+
+div.content {
+    /* box-flex: 1.0; */
+    float: left;
+    width: calc(100% - 270px);
+    min-height: calc(100% - 20px);
+    margin: 0 0 10px 0;
+    padding: 10px;
+    overflow-x: scroll;
+    background-color: white;
+    opacity: 75%;
+}
+
+div.footer {
+    margin: 10px 0 10px 0;
+    padding: 0;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+span.footer {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10pt;
+    font-weight: normal;   
+}
+
+table.menu {
+    color: black;
+}
+
+table.menu > tr {
+
+}
+
+table.menu > td {
+
+}
+
+table.menu td.title {
+    column-span: all;
+}
+
+table.menu td:nth-child(2) {
+    width: 1in;
+    text-align: right;
+}
+
+div.navigation {
+    float: left;
+    width: 210px;
+    height: calc(100% - 140px);
+    margin: 120px 0 0 0;
+    padding: 10px 30px 10px 10px;
+    text-align: right;
+}
+
+a.navigation {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    color: light-grey;
+    text-decoration: none;
+}
+
+div.middle {
+    margin: 0;
+    padding: 0;
+    height: calc(100% - 200px);
+    vertical-align: bottom;
+}
+
+img.avatar {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+img.pyrates {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    height: 220px;
+}
+
+a:-webkit-any-link {            /* This is the final override */
+    text-decoration: none;
+    color: black;
+}
+
+pre {
+    font-size: 14pt;
+}
