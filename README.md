@@ -58,7 +58,7 @@ You are already here at GitHub!
 This process requires launching the browser with the developer tools open in every new tab, in order
 to see the developer tools in the tab the Okta Browser Plugin opens the application in.
 The tools may be opened using the command line with Google Chrome and Microsoft Edge.
-Because other browers require a plugin to make that happen, they will not be addressed here, although you
+Because other browers require a plugin to make that happen they will not be addressed here, although you
 may research that yourself to try.
 
 The Okta Browser Plugin does not support Microsoft Edge running in IE compatibility mode
@@ -69,7 +69,7 @@ This may be an issue you are already familiar with in your organization.
 
 ## Step 1: Configure the application
 
-This repository includes an application that provides primitive authentication like many
+This repository includes an application with primitive authentication like many
 Software as a Service (SaaS) vendors provide.
 The repository may be cloned and the application executed locally, or a GitHub Codespace may be launched from
 GitHub and the application will self-start.
@@ -87,7 +87,7 @@ GitHub and the application will self-start.
 1. In this repository click the green *Code* button.
 1. In the popup select the *Codespace* tab and click the green *Open in Codespace* button.
 1. A new tab will open with a random Codespace name, make sure you are viewing it.
-1. Wait for the Codespace to build and the application to launch; a message idicating it is listening will appear on the VSCode terminal window.
+1. Wait for the Codespace to build and the application to launch; a message indicating it is listening will appear on the VSCode terminal window.
 1. Make a note of the Codespace URL where the application is listening, this is what will be configured at Okta.
 
 ### Testing the application (locally or in a Codespace)
@@ -111,7 +111,7 @@ This step is a normal integration; a basic understanding of Okta administration 
 1. Under Applications &rarr; Applications click the *Create App Integration* button and use the Application Integration Wizard (AIW) to start a new integration.
 1. Pick *SWA - Secure Web Authentication* as the type and click the *Next* button.
 1. Set *Pyrates* as the integration name.
-1. Add the path /login to the URL as discovered in the previous section, and set that as the URL for tha application.
+1. Add the path /login to the URL as discovered in the previous section, and set that as the URL for the application.
 For example, *https://solid-sniffle-6pp459r6j53qg6-3000.app.github.dev* becomes *https://solid-sniffle-6pp459r6j53qg6-3000.app.github.dev/login*.
 The path is important, /login is the path the Okta plugin is looking for.
 A local application will run forever but a Codespace will time out if a user does not interact.
