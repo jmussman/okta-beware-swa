@@ -12,15 +12,7 @@ const launch = () => {
     // Inject the base, client id, client secret, and applicaiton port into the controller.
 
     dotenvConfig()
-
-    // Is this running in a codespace? Print the URL to the application on the console.
-
-    if (process.env.CODESPACE_NAME) {
-
-        console.log(`Application is running at https://${process.env.CODESPACE_NAME}-${process.env.APPLICATION_PORT}.app.github.dev (use cmd-click or ctrl-click to open)`)
-    }
-
-    homeController(process.env.APPLICATION_PORT)
+    homeController(process.env.APPLICATION_PORT, process.env.CODESPACE_NAME)
 }
 
 const shutdown = () => {

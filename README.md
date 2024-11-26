@@ -5,25 +5,84 @@
 ![Banner Light](https://raw.githubusercontent.com/jmussman/cdn-fun/main/banners/banner-okta-beware-swa-light.png#gh-light-mode-only)
 ![banner Dark](https://raw.githubusercontent.com/jmussman/cdn-fun/main/banners/banner-okta-beware-swa-dark.png#gh-dark-mode-only)
 
-# Perform a manual compromise of SWA credentials
+# Okta Secure Web Authentication
 
-Okta SWA acts a secure password manager that stores credentials at the Okta tenant instead of in the
-browser and allows the Okta administrator to manage the credentials instead of the user.
-A browser extension notices landing on a configured application, requests the credentials
-from the Okta tenant, and provides them to the application.
-This often leads to an expectation of privacy on the part of the Okta administrator, a belief
-that the credentials cannot are secure through to the application.
+## Advantages and Vulnerabilities
 
-The following are manual steps a user can follow to intercept the login and capture the credentials using Chrome or Edge. Firefox and Safari require a browser extension to be installed to
-automatically launch the developer tools, so while these
-instructions could be adapted they will not be discussed here.
-Of course the Okta Browser Plugin must be installed in whichever browser is used.
+Okta SWA is fundamentally a password management system.
+A browser plugin is required to monitor web pages and step in to provide credentials when a registered application is visted.
+The plugin retrieves the credentials from the Okta tenant and effectively provides single sign-on for the page.
 
-Familiarity is required with running commands in the Terminal or
+* Credentials stored at the Okta tenant, not on the user computer
+* Credentials may be managed by the user or the administrator
+* The plugin supports multiple users and multiple tenants simultaneously
+
+Blocking user credential management and not storing passwords at the tenant
+often leads to an expectation of privacy on the part of the Okta administrator, a belief
+that the credentials are secure through to the application.
+This is not actually true.
+
+What follows is a lab defeating the secrecy of the the credentials used to authenticate with the app.
+The intention is not to disparage Okta SWA, rather the purpose is to educate administrators to have
+clear expectations and make informed decisions.
+
+# Compromise SWA credentials
+
+This process will use nothing more than the browser to expose the credentials the Okta plugin is sending
+to provide SSO for a user into an application.
+
+
+There will be configuration of the application in an Okta tenant, and there will be a requirement
+to do some configuration in the browser space to get developer tools to appear when Okta launches the application.
+
+Some familiarity is required with running commands in the Terminal or
 PowerShell, browser developer tools, following network calls in developer tools,
 HTML forms, and JavaScript. 
 
-### Configure Chrome or Microsoft Edge
+## Configure the application
+
+This project includes an application that provides a primitive authentication, but like many
+Software as a service (SaaS) vendors provide.
+The project may be cloned and the application executed locally, or a Microsoft Codespace may be launched from
+GitHub and the application will self-start.
+
+### Clone Locally
+
+1. Clone the project locally.
+1. In the terminal window run "npm install".
+1. Run "npm start" to launch the application.
+1. The URL to reach the application is always http://localhost:3000.
+
+### Run in a GitHub Codespace
+
+1. Click the "Code" button on the repository at GitHub.
+1. Click the "Open in Codespace" button.
+1. Wait for the Codespace to build and the application to launch; a message with the URL will appear on the terminal window.
+1. Make a note of the Codespace URL where the application is listening.
+
+In either case visit the URL and make sure the application launches.
+Valid usernames and passwords too test the pplication with are:
+
+| Username | Password |
+| --- | --- |
+| calicojack@pyrates.live | P!rates17 |
+| blackbeard@pyrates.live | Pirates17 |
+| annebonny@pyrates.live | Pirates17 |
+
+## Create an application integration in Okta
+
+The next step is pretty straightforward, an understanding of Okta administration is expected.
+
+1. Use the Application Integration Wizard (the "Create an App Integration" button) to start a new integration.
+1. Pick a Web Application and SWA as the type.
+1. The name is not important, "Pyrates" is suggested.
+1. The URL will be the URL for tha application.
+Codespaces will time out if the user does not interact, but restarting a Codespace will  shuts down, 
+1. Pick the same username and password for all users and configure one of the credentials above, perhaps "annebonny@pyrates.live" and "P!rates17".
+1. Assign a user to the application integration for testing.
+1. With the application running, sign on as the user and test the application.
+
+## Configure Chrome or Microsoft Edge to capture information
 
 Ensure the Okta plugin is installed in the browser and linked to the organization that
 has the SWA application configured.

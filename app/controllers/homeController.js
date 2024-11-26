@@ -11,7 +11,7 @@ import userCredentials from '../config/userCredentials.js'
 
 let appServer = null
 
-const homeController = (applicationPort) => {
+const homeController = (applicationPort, codespaceDomain) => {
 
     const app = express()
     const iconPath = path.join(import.meta.dirname, '../public/assets/images/favicon.ico')
@@ -91,7 +91,14 @@ const homeController = (applicationPort) => {
     })
 
     appServer = app.listen(applicationPort)
-    console.log(`Pyrates application is listening on port ${applicationPort}: visit http://localhost:${applicationPort}`)
+    console.log(`Pyrates application is listening on port ${applicationPort}: visit http://localhost:${applicationPort} (use cmd-click or ctrl-click to open)`)
+
+    // Is this running in a codespace? Print the URL to the application on the console.
+
+    if (codespaceName) {
+
+        console.log(`This application is listenting in a Codespace at https://${codespaceName}-${applicationPort}.app.github.dev (use cmd-click or ctrl-click to open)`)
+    }
 }
 
 const shutdown = () => {
