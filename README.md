@@ -217,7 +217,7 @@ Wala!
 
     ![Background Task](./.assets/login-post-payload.png)
 
-If this was a single-page applicatin (SPA), you will have to do a little more digging
+If this was a single-page application (SPA) you will have to do a little more digging
 in the network traffic to see where the
 JavaScript sent the credentials to a web service (API) for verification.
 But, it will be there!
