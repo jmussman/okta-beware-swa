@@ -7,7 +7,8 @@ const credentials = {
     "calicojack@pyrates.live": "P!rates17",
     "blackbeard@pyrates.live": "P!rates17",
     "blackceasar@pyrates.live": "P!rates17",
-    "annebonny@pyrates.live": "P!rates17"
+    "annebonny@pyrates.live": "P!rates17",
+    "maryread@pyrates.live": "P!rates17"
 }
 
 export default credentials; 
