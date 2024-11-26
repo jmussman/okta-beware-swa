@@ -11,7 +11,7 @@ import userCredentials from '../config/userCredentials.js'
 
 let appServer = null
 
-const homeController = (applicationPort, codespaceDomain) => {
+const homeController = (applicationPort, codespaceName) => {
 
     const app = express()
     const iconPath = path.join(import.meta.dirname, '../public/assets/images/favicon.ico')
